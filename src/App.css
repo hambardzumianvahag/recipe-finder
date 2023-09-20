@@ -1,38 +1,119 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.header ul {
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  gap: 40px;
+  cursor: pointer;
+  align-items: center;
+  list-style: none;
+}
+.header img {
+  width: 100px;
+}
+.main {
+  background-image: url("https://recipefinder-letscook.netlify.app/static/media/letsCook-background.fb290b7ac835aa1b3428.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: gray;
+  display: flex;
+}
+.main-container {
+  margin: 200px auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container h1 {
+  font-size: 48px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main button {
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: aqua;
   color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.main button:hover {
+  background-color: rgb(48, 184, 184);
+}
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 50px;
+  row-gap: 10px;
+}
+.each-pizza hr {
+  width: 95%;
+  margin: 0 auto;
+}
+.pizza-information {
+  padding: 10px 2px;
+}
+.btns {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  gap: 20px;
+}
+.btns button {
+  padding: 3px 12px;
+  margin: 0 auto;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.each-pizza img {
+  width: 200px;
+  height: 200px;
+}
+.each-pizza {
+  width: 200px;
+  border: 2px solid gray;
 }
 
-.App-link {
-  color: #61dafb;
+.details {
+  background-color: rgb(54, 158, 228);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recipe {
+  background-color: green;
+}
+.each-pizza-recipe {
+  display: flex;
+  align-items: center;
+}
+.pizza-recipe {
+  width: 90%;
+  margin: 0 auto;
+}
+.pizza-recipe button {
+  margin-bottom: 30px;
+  padding: 6px 15px;
+  background-color: yellowgreen;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+.each-pizza-recipe img {
+  width: 400px;
+  height: 400px;
+}
+.pizza-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.pizza-recipe ul {
+  list-style: none;
 }
