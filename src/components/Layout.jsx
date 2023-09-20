@@ -11,9 +11,9 @@ const Layout = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/recipes" element={<Recipes />} />
-        <Route path="/recipes/:recipeId" element={<EachPizza />} /> {/* Add route for EachPizza */}
+        <Route path="/recipe-finder" element={<Main />} />
+        <Route path="/recipe-finder/recipes" element={<Recipes />} />
+        <Route path="/recipe-finder/recipes/:recipeId" element={<EachPizza />} /> {/* Add route for EachPizza */}
       </Routes>
     </div>
   );

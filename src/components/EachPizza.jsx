@@ -28,7 +28,7 @@ const EachPizza = () => {
 
   return (
     <div className="pizza-recipe">
-     <Link to='/recipes'> <button>Back to main</button></Link>
+     <Link to='/recipe-finder/recipes'> <button>Back to main</button></Link>
       <div className="each-pizza-recipe">
       {loading ? (
         <p>Loading pizza details...</p>

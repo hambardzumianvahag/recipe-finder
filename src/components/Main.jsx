@@ -6,7 +6,7 @@ const Main = () => {
     <div className="main">
       <div className="main-container">
         <h1>Find Your Recipes</h1>
-        <Link to='/recipes'>
+        <Link to='/recipe-finder/recipes'>
           <button>SEARCH RECIPES</button>
         </Link>
       </div>

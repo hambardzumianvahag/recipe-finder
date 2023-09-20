@@ -27,7 +27,7 @@ const Recipes = () => {
                     <p>{item.publisher}</p>
                     <hr />
                     <div className="btns">
-                      <Link to={`/recipes/${item.recipe_id}`}>
+                      <Link to={`/recipe-finder/recipes/${item.recipe_id}`}>
                         <button className="details">Details</button>
                       </Link>
                       <a

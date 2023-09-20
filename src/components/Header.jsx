@@ -8,10 +8,10 @@ const Header = () => {
         <li>
           <img src={logo} alt="#" />
         </li>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/recipe-finder">
           Home
         </Link>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/recipes">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/recipe-finder/recipes">
           Recipes
         </Link>
       </ul>
