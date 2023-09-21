@@ -3,7 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   pizzas: [],
   loading: false,
-  recipeIds: [],
+  recipeId: null,
+  eachPizza: [],
 };
 
 export const getRecipesAsync = createAsyncThunk(
@@ -17,7 +18,17 @@ export const getRecipesAsync = createAsyncThunk(
     return result;
   }
 );
-
+export const getEachPizzaAsync = createAsyncThunk(
+  "recipes/getEachPizzaAsync",
+  async (recipeId) => {
+    const response = await fetch(
+      `https://forkify-api.herokuapp.com/api/get?rId=${recipeId}`
+    );
+    const result = await response.json();
+    console.log(result);
+    return result;
+  }
+);
 export const RecipesStore = createSlice({
   name: "recipes",
   initialState,
@@ -29,12 +40,16 @@ export const RecipesStore = createSlice({
     [getRecipesAsync.fulfilled]: (state, action) => {
       state.loading = false;
       state.pizzas = action.payload;
-      // state.recipeIds = action.payload.pizzas.map(
-      //   (pizza) => pizza.recipe_id
-      // );
     },
     [getRecipesAsync.rejected]: (state, action) => {
       state.loading = false;
+    },
+    [getEachPizzaAsync.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [getEachPizzaAsync.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.eachPizza = action.payload;
     },
   },
 });

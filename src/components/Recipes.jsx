@@ -2,7 +2,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipesAsync } from "../redux/slices/RecipesSlice";
+import {
+  getEachPizzaAsync,
+  getRecipesAsync,
+} from "../redux/slices/RecipesSlice";
 
 const Recipes = () => {
   const pizzas = useSelector((state) => state.recipes.pizzas);
@@ -11,6 +14,9 @@ const Recipes = () => {
   useEffect(() => {
     dispatch(getRecipesAsync());
   }, []);
+  const eachItem = (id) => {
+    dispatch(getEachPizzaAsync(id));
+  };
   return (
     <div className="recipes">
       {loading ? (
@@ -28,7 +34,12 @@ const Recipes = () => {
                     <hr />
                     <div className="btns">
                       <Link to={`/recipe-finder/recipes/${item.recipe_id}`}>
-                        <button className="details">Details</button>
+                      <button
+                        onClick={() => eachItem(item.recipe_id)}
+                        className="details"
+                      >
+                        Details
+                      </button>
                       </Link>
                       <a
                         href={item.source_url}
